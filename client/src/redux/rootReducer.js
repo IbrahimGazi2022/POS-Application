@@ -29,6 +29,18 @@ export const rootReducer = (state = initialState, action) => {
         ),
       };
 
+    case "showLoading":
+      return {
+        ...state,
+        loading: true,
+      };
+      
+    case "hideLoading":
+      return {
+        ...state,
+        loading: false,
+      };
+
     default:
       return state;
   }
