@@ -19,3 +19,14 @@
   background-color: rgb(15, 155, 15) !important;
   color: white !important;
 }
+.spinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+}
+.spinner-border {
+  width: 100px;
+  height: 100px;
+}
