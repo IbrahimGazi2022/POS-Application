@@ -131,7 +131,7 @@ const Items = () => {
             setAddEditModalVisibilty(false);
             setEditingItem(null);
           }}
-          title={`${editingItem !== null ? "Edit Item" : "Add New I"}`}
+          title={`${editingItem !== null ? "Edit Item" : "Add New Item"}`}
           footer={false}
         >
           <Form
