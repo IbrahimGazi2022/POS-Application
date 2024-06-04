@@ -4,8 +4,9 @@ const dbConnect = require("./dbConnect");
 const app = express();
 app.use(express.json());
 const itemsRoute = require("./routes/itemsRoute");
+const userRoute = require("./routes/userRoute");
 app.use("/api/items/", itemsRoute);
-
+app.use("/api/users/", userRoute);
 
 if (process.env.NODE_ENV === "production") {
   app.use("/", express.static("client/build"));
