@@ -65,6 +65,11 @@ const DefaultLayout = (props) => {
             },
             {
               key: "5",
+              icon: <ShoppingCartOutlined />,
+              label: <Link to="/cart">Cart</Link>,
+            },
+            {
+              key: "6",
               icon: <LoginOutlined />,
               label: (
                 <Link
@@ -77,11 +82,6 @@ const DefaultLayout = (props) => {
                   Logout
                 </Link>
               ),
-            },
-            {
-              key: "6",
-              icon: <ShoppingCartOutlined />,
-              label: <Link to="/cart">Cart</Link>,
             },
           ]}
         />

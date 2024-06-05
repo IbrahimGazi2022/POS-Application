@@ -53,3 +53,9 @@
 .selected-category {
   border: 3px solid rgb(3, 38, 66);
 }
+
+.sub-total h3 {
+  color: rgb(0, 133, 18) !important;
+  font-size: 25px;
+  padding: 15px;
+}

@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
+import { useEffect, useState } from "react";
 import DefaultLayout from "../components/DefaultLayout";
 import { Table } from "antd";
 import {
@@ -9,6 +10,7 @@ import {
 
 const CartPage = () => {
   const { cartItems } = useSelector((state) => state.rootReducer);
+  const [subTotal, setSubTotal] = useState(0);
   const dispatch = useDispatch();
 
   const increaseQuantity = (record) => {
@@ -70,10 +72,28 @@ const CartPage = () => {
       ),
     },
   ];
+
+  useEffect(() => {
+    let temp = 0;
+    cartItems.forEach((item) => {
+      temp = temp + item.price * item.quantity;
+    });
+
+    setSubTotal(temp);
+  }, [cartItems]);
+
   return (
     <DefaultLayout>
       <h3>Cart</h3>
       <Table columns={columns} dataSource={cartItems} bordered />
+
+      <div className="d-flex justify-content-end">
+        <div className="sub-total">
+          <h3>
+            SUB TOTAL : <b>{subTotal}</b>
+          </h3>
+        </div>
+      </div>
     </DefaultLayout>
   );
 };
