@@ -10,9 +10,9 @@ router.post("/login", async (req, res) => {
       verified: true,
     });
     if (user) {
-      res.send("Login successfull");
+      res.send(user);
     } else {
-      res.status(400).json({ message: "Login Failed", user });
+      res.status(400).json({ message: "Login failed", user });
     }
   } catch (error) {
     res.status(400).json(error);

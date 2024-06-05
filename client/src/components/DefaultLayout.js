@@ -32,7 +32,7 @@ const DefaultLayout = (props) => {
       {loading && (
         <div className="spinner">
           <div class="spinner-border text-primary" role="status">
-            <span class="visually-hidden">  </span>
+            <span class="visually-hidden"> </span>
           </div>
         </div>
       )}
@@ -66,7 +66,17 @@ const DefaultLayout = (props) => {
             {
               key: "5",
               icon: <LoginOutlined />,
-              label: <Link to="/logout">Logout</Link>,
+              label: (
+                <Link
+                  to="/logout"
+                  onClick={() => {
+                    localStorage.removeItem("pos-user");
+                    navigate("/login");
+                  }}
+                >
+                  Logout
+                </Link>
+              ),
             },
           ]}
         />
