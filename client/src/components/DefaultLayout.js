@@ -78,6 +78,11 @@ const DefaultLayout = (props) => {
                 </Link>
               ),
             },
+            {
+              key: "6",
+              icon: <ShoppingCartOutlined />,
+              label: <Link to="/cart">Cart</Link>,
+            },
           ]}
         />
       </Sider>
