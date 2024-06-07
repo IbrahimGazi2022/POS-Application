@@ -5,8 +5,10 @@ const app = express();
 app.use(express.json());
 const itemsRoute = require("./routes/itemsRoute");
 const userRoute = require("./routes/userRoute");
+const billsRoute = require('./routes/billsRoute')
 app.use("/api/items/", itemsRoute);
 app.use("/api/users/", userRoute);
+app.use("/api/bills/", billsRoute);
 
 if (process.env.NODE_ENV === "production") {
   app.use("/", express.static("client/build"));
